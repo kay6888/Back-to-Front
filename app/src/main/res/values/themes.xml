@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme — provides a window background while Compose draws its own theme -->
+    <style name="Theme.BackToFront" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#0D0A1E</item>
+        <item name="android:statusBarColor">#0D0A1E</item>
+        <item name="android:navigationBarColor">#0D0A1E</item>
+    </style>
+</resources>
