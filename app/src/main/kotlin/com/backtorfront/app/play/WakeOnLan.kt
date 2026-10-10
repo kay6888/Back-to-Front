@@ -9,14 +9,9 @@ object WakeOnLan {
     fun parseMac(mac: String): ByteArray? {
         val parts = mac.trim().split(':', '-')
         if (parts.size != 6) return null
-        return try {
-            ByteArray(6) { i ->
-                if (parts[i].length != 2) return null
-                parts[i].toInt(16).toByte()
-            }
-        } catch (e: NumberFormatException) {
-            null
-        }
+        if (parts.any { it.length != 2 }) return null
+        val bytes = parts.map { it.toIntOrNull(16) ?: return null }
+        return ByteArray(6) { bytes[it].toByte() }
     }
 
     /** Magic packet: 6 x 0xFF followed by the MAC repeated 16 times (102 bytes). */

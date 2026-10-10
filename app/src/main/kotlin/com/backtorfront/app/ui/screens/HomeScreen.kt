@@ -22,6 +22,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Code
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Terminal
 import androidx.compose.material3.Button
@@ -61,7 +62,7 @@ import com.backtorfront.app.ui.theme.TextSecondary
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(onOpenPlay: () -> Unit = {}) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -156,6 +157,12 @@ fun HomeScreen() {
             }
 
             Spacer(Modifier.height(4.dp))
+
+            GlowButton(
+                text = "PLAY CLASSIC WOW",
+                icon = Icons.Filled.PlayArrow,
+                onClick = onOpenPlay
+            )
 
             // ── Status line ────────────────────────────────────────────────
             StatusLine()

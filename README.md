@@ -86,3 +86,18 @@ Back-to-Front/
 │   └── wrapper/gradle-wrapper.properties
 └── settings.gradle.kts
 ```
+
+---
+
+## Classic WoW Remote Play
+
+Blizzard offers no Android client, so the **PLAY CLASSIC WOW** screen is a companion for
+*streaming your own, legally licensed* client from a PC or cloud VM. No game files or
+private-server support are included.
+
+1. Run the Classic client on a PC (or cloud VM) with Sunshine/Moonlight, Steam Link, Parsec or GeForce NOW.
+2. In the app, add a host (name, address/broadcast IP, WoL port, MAC, preferred streaming app).
+3. **WAKE** sends a Wake-on-LAN magic packet (UDP); **LAUNCH** opens the streaming app (or its Play Store page).
+4. **Touch controls** provides a joystick, camera-drag, tap-to-target and a remappable hotbar layout.
+
+Unit tests: `./gradlew :app:testDebugUnitTest`
